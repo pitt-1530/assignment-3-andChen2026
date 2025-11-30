@@ -9,6 +9,13 @@ public class PlaylistRecommenderTest {
     @Test
     public void emptybpms() {
         // Should fail since list is null
+        ArrayList<Integer> bpms = new ArrayList<>();
+        assertThrows(UnsupportedOperationException.class, () -> PlaylistRecommender.classifyEnergy(bpms));
+    }
+
+    @Test
+    public void nullbpms() {
+        // Should fail since list is null
         ArrayList<Integer> bpms = null;
         assertThrows(UnsupportedOperationException.class, () -> PlaylistRecommender.classifyEnergy(bpms));
     }
